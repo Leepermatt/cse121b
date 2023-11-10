@@ -4,7 +4,7 @@
 
 /* Step 2 - Variables */
 let fullName = 'Matthew Leeper';
-let currentYear = Date.currentYear;
+let currentYear = new Date().getFullYear();
 const profilePicture = `images/mypic.jpg`
 
 // const a1 = 'https://nodejs.org/static/images/logo.svg';
