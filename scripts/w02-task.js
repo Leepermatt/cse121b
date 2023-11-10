@@ -5,7 +5,7 @@
 /* Step 2 - Variables */
 let fullName = 'Matthew Leeper';
 let currentYear = Date.currentYear;
-const profilePicture = `./images/mypic.jpg`
+const profilePicture = `images/mypic.jpg`
 
 // const a1 = 'https://nodejs.org/static/images/logo.svg';
 //const image = document.getElementById("image");
@@ -16,7 +16,7 @@ const profilePicture = `./images/mypic.jpg`
 const nameElement = document.getElementById('name');
 const foodElement = document.getElementById('food');
 const yearElement = document.querySelector('#year');
-const imageElement = document.querySelector('image');
+const imageElement = document.querySelector('picture img');
 
 
 
@@ -34,8 +34,9 @@ imageElement.setAttribute('alt', `profile image of ${fullName}`);
 /* Step 5 - Array */
 
 const favoriteFoods =['sushi', 'hamburgers', 'burritos', 'tacos']
-favoriteFoods.push('spicy food');
 foodElement.innerHTML= favoriteFoods;
+const extraFoodItem = 'spicy food';
+favoriteFoods.push(extraFoodItem);
 foodElement.innerHTML += `<br>${favoriteFoods}`;
 favoriteFoods.shift();
 foodElement.innerHTML += `<br>${favoriteFoods}`;
