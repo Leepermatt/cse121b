@@ -52,18 +52,19 @@ document.querySelector('#divideNumbers').addEventListener('click', divideNumbers
 
 const total = (subtotal, discount) => subtotal * discount;
 function totalDiscount() {
-    const subtotal = parseInt(document.querySelector('#subtotal').value);
+    const subtotal = parseInt(document.querySelector('#subtotal').innerHTML.value);
     let discount = 1.0
     
-    if (document.getElementById("member").checked){
-    discount = 0.20;
+    if (document.getElementById("member").innerHTML.checked){
+    discount = 0.80;
     }
     
         
     
-    document.querySelector("#total").value = total(subtotal, discount);
+    document.querySelector("#total").innerHTML.value = total(subtotal, discount);
 }
 document.querySelector('#getTotal').addEventListener('click', totalDiscount);
+
 
 /* ARRAY METHODS - Functional Programming */
 
