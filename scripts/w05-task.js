@@ -73,7 +73,7 @@ const sortBy = () => {
 getTemples();
 
 /* Event Listener */
-
 const sortByElement = document.getElementById('sortBy');
 
 sortByElement.addEventListener('change', sortBy);
+
