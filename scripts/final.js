@@ -1,13 +1,12 @@
 
 const factsElements = document.querySelector('#Facts');
 
-let factsList = [];
+let factsList = { };
 
 const displayFacts = (facts) => {
     factsElements.innerHTML = '';
     
     facts.forEach(fact => {
-
         let article = document.createElement('article');
         let displayFactMessage = document.createElement('displayFactMesssage')
         displayFactMessage.textContent = fact.text;
@@ -29,6 +28,9 @@ const getDailyFact = async () => {
         displayFacts(factsList);
         console.log(JSON.stringify(factsList));
     }
+};
+const reset = () => {
+    factsElement.innerHTML = '';
 };
 const sortBy = () => {
     const filter = document.getElementById('sortBy').value;
@@ -54,9 +56,8 @@ const sortBy = () => {
     }
 };
 
-const reset = () => {
-    factsElement.innerHTML = '';
-};
-
-
 getDailyFact();
+
+const sortByElement = document.getElementById('sortBy');
+
+sortByElement.addEventListener('change', sortBy);
