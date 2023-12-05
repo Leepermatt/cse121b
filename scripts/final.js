@@ -5,10 +5,10 @@ let factsList = { };
 
 const displayFacts = (facts) => {
     factsElements.innerHTML = '';
-    
+
     facts.forEach(fact => {
         let article = document.createElement('article');
-        let displayFactMessage = document.createElement('displayFactMesssage')
+        let displayFactMessage = document.createElement('displayFactMesssage');
         displayFactMessage.textContent = fact.text;
         article.appendChild(displayFactMessage);
         factsElements.appendChild(article);
@@ -17,10 +17,9 @@ const displayFacts = (facts) => {
 
 
 const getDailyFact = async () => {
-    //let address = 'http://numbersapi.com/random/trivia?json'
+    
     let address = sortBy()
     
-    //sortBy()
     const response = await fetch(address)
     if (response.ok) {
         const data = await response.json();
