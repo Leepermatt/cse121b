@@ -1,0 +1,35 @@
+body {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    text-align: center;
+    background-color: #eb7e7e;
+
+}
+#displayFactMesssage {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    text-align: center;
+    font-size: large;
+}
+#sortBy {
+    appearance: none;
+    display: flex;
+    padding: .5rem;
+    background-color: #eee;
+    color: #444;
+    font-weight: 700;
+    margin: 1rem auto;
+    width: 200px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    text-align: center;
+}
+
+#sortBy option:disabled {
+    font-style: italic;
+    padding: 1rem;
+    background-color: #111;
+    color: #eee;
+}
+#Facts {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    text-align: center;
+    font-size: large;
+}

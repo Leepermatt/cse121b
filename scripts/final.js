@@ -19,6 +19,7 @@ const displayFacts = (facts) => {
 const getDailyFact = async () => {
     //let address = 'http://numbersapi.com/random/trivia?json'
     let address = sortBy()
+    
     //sortBy()
     const response = await fetch(address)
     if (response.ok) {
@@ -37,21 +38,21 @@ const sortBy = () => {
 
     switch (filter) {
         case 'Trivia':
-            address = 'http://numbersapi.com/random/trivia?json'
+            address = 'https://run.mocky.io/v3/eb1fc748-260d-45bc-852a-86cf19e5c3b2'
             return address;
             
         case 'Math':
-            address = 'http://numbersapi.com/random/math?json'
+            address = 'https://run.mocky.io/v3/a284546c-8741-4789-8bf5-77820b5547e7'
             return address
             
         case 'Date':
-            address = 'http://numbersapi.com/random/date?json'
+            address = 'https://run.mocky.io/v3/00d9923e-5f13-4f01-8b84-beb6f5c7aacf'
             return address
         case 'Year':
-            address = 'http://numbersapi.com/random/year?json'
+            address = 'https://run.mocky.io/v3/3b0d5240-a41d-4420-bd4e-8fa2a7507ac3'
             return address
         default:
-            address = 'http://numbersapi.com/random/trivia?json'
+            address = 'https://run.mocky.io/v3/eb1fc748-260d-45bc-852a-86cf19e5c3b2'
             return address;
     }
 };
