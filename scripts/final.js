@@ -1,16 +1,19 @@
 
 const factsElements = document.querySelector('#Facts');
 
-let factsList = { };
+let factsList = [];
 
 const displayFacts = (facts) => {
     factsElements.innerHTML = '';
 
     facts.forEach(fact => {
         let article = document.createElement('article');
+        let h3 = document.createElement('h3');
         let displayFactMessage = document.createElement('displayFactMesssage');
+        h3.textContent = fact.type;
         displayFactMessage.textContent = fact.text;
         article.appendChild(displayFactMessage);
+        article.appendChild(h3);
         factsElements.appendChild(article);
 })
 };
@@ -18,9 +21,7 @@ const displayFacts = (facts) => {
 
 const getDailyFact = async () => {
     
-    let address = sortBy()
-    
-    const response = await fetch(address)
+    const response = await fetch('https://run.mocky.io/v3/74a168a4-ae4a-48f8-bae1-2457d3a380ce')
     if (response.ok) {
         const data = await response.json();
 
@@ -37,22 +38,19 @@ const sortBy = () => {
 
     switch (filter) {
         case 'Trivia':
-            address = 'https://run.mocky.io/v3/eb1fc748-260d-45bc-852a-86cf19e5c3b2'
-            return address;
-            
+            displayFacts(factsList.filter(fact => fact.type.includes('trivia')));
+            break;          
         case 'Math':
-            address = 'https://run.mocky.io/v3/a284546c-8741-4789-8bf5-77820b5547e7'
-            return address
-            
+            displayFacts(factsList.filter(fact => fact.type.includes('math')));
+            break;
         case 'Date':
-            address = 'https://run.mocky.io/v3/00d9923e-5f13-4f01-8b84-beb6f5c7aacf'
-            return address
+            displayFacts(factsList.filter(fact => fact.type.includes('date')));
+            break;
         case 'Year':
-            address = 'https://run.mocky.io/v3/3b0d5240-a41d-4420-bd4e-8fa2a7507ac3'
-            return address
-        default:
-            address = 'https://run.mocky.io/v3/eb1fc748-260d-45bc-852a-86cf19e5c3b2'
-            return address;
+            displayFacts(factsList.filter(fact => fact.type.includes('year')));
+            break;
+            default:
+                console.error('Invalid filter value');
     }
 };
 
